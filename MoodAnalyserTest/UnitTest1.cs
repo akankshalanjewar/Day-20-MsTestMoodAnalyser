@@ -7,27 +7,25 @@ namespace MoodAnalyserTest
     public class UnitTest1
     {
         [TestMethod]
-        public void Given_Null_Mood_Should_Throw_MoodAnalysisException()
+        public void Given_Empty_Mood_Should_Throw_MoodAnalyseException_Indicating_EmptyMood()
         {
             try
             {
-                string message = null;
+                string message = " ";
                 MoodAnaliser moodAnaliser = new MoodAnaliser(message);
                 string mood = moodAnaliser.AnalizeMood();
             }
-            catch (MoodAnalyserCustomeException ex)
+            catch (MoodAnalyserCustomeException e)
             {
-                Assert.AreEqual("Mood should not be null", ex.Message);
+                Assert.AreEqual("Mood should not be Empty", e.Message);
             }
         }
 
     }
-} 
-    
+}
 
 
 
 
-        
-    
+
 
