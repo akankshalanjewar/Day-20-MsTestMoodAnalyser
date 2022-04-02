@@ -9,11 +9,10 @@ namespace MoodAnalyserTest
         [TestMethod]
         public void TestMethod1()
         {
-
             //Arrange
-            string expected = "SAD";
-            string message = "I am in HAPPY Mood";
-            MoodAnalyzer mood = new MoodAnalyzer(message);
+            string expected = "HAPPY";
+            string message = "I am in SAD Mood";
+            MoodAnaliser mood = new MoodAnaliser(null);
 
             // Act
             string mood1 = mood.AnalizeMood();
@@ -23,6 +22,7 @@ namespace MoodAnalyserTest
         }
     }
 }
+
 
 
         
