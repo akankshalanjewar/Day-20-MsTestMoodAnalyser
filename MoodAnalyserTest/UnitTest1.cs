@@ -7,21 +7,24 @@ namespace MoodAnalyserTest
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Given_Null_Mood_Should_Throw_MoodAnalysisException()
         {
-            //Arrange
-            string expected = "HAPPY";
-            string message = "I am in SAD Mood";
-            MoodAnaliser mood = new MoodAnaliser(null);
-
-            // Act
-            string mood1 = mood.AnalizeMood();
-
-            //Assert
-            Assert.AreEqual(expected, mood1);
+            try
+            {
+                string message = null;
+                MoodAnaliser moodAnaliser = new MoodAnaliser(message);
+                string mood = moodAnaliser.AnalizeMood();
+            }
+            catch (MoodAnalyserCustomeException ex)
+            {
+                Assert.AreEqual("Mood should not be null", ex.Message);
+            }
         }
+
     }
-}
+} 
+    
+
 
 
 
